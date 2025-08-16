@@ -20,7 +20,7 @@ public class OrderController {
 
     @PostMapping
     public ResponseEntity<UUID> create(@Valid @RequestBody CreateOrderRequest req) {
-        UUID id = service.create(req);
+        UUID id = service.createOrder(req);
         return ResponseEntity.created(URI.create("/api/orders/" + id)).body(id);
     }
 }

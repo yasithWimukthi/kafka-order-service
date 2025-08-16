@@ -22,7 +22,7 @@ public class Order {
     void prePersist() {
         if (id == null) id = UUID.randomUUID();
         if (createdAt == null) createdAt = Instant.now();
-        if (status == null) status = "CREATED";
+        if (status == null) status = "PENDING";
     }
 
     public Order() {
