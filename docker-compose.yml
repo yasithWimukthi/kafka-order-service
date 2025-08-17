@@ -44,7 +44,7 @@ services:
 
   postgres:
     image: postgres:16
-    container_name: postgres
+    container_name: order-db
     environment:
       - POSTGRES_DB=orders
       - POSTGRES_USER=postgres
@@ -68,3 +68,4 @@ services:
 volumes:
   kafka_data:
   pg_data:
+
