@@ -17,6 +17,8 @@ public class Order {
     private long amountCents;
     private String status;
     private Instant createdAt;
+    private String sku;
+    private int quantity;
 
     @PrePersist
     void prePersist() {
@@ -28,12 +30,14 @@ public class Order {
     public Order() {
     }
 
-    public Order(UUID id, String customerEmail, long amountCents, String status, Instant createdAt) {
+    public Order(UUID id, String customerEmail, long amountCents, String status, Instant createdAt, String sku, int quantity) {
         this.id = id;
         this.customerEmail = customerEmail;
         this.amountCents = amountCents;
         this.status = status;
         this.createdAt = createdAt;
+        this.sku = sku;
+        this.quantity = quantity;
     }
 
     public UUID getId() {
@@ -74,5 +78,21 @@ public class Order {
 
     public void setCreatedAt(Instant createdAt) {
         this.createdAt = createdAt;
+    }
+
+    public String getSku() {
+        return sku;
+    }
+
+    public void setSku(String sku) {
+        this.sku = sku;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 }
